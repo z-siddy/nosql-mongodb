@@ -9,17 +9,17 @@ const teamSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  players: [{
+    type: mongoose.Schema.Types.Object,
+    ref: 'Player'
+  }],
   info: {
     country: {
       type: String,
       required: true
     },
-    fanCount: {
-      type: Number,
-      required: true
-    },
-    conference: {
-      type: String,
+    divisionID: {
+      type: mongoose.Schema.Types.ObjectId,
       required: true
     }
   }
